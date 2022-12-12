@@ -72,11 +72,11 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 *  For each radar frame, its raw data (*.mat) has *4 dimension: samples (128), chirps (255), receivers (4), transmitters (2)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
 
     The example frame structure is shown as below:
-<p align="center"> <img src='docs/frame_structure.png' align="center" height="300px"> </p>
+<p align="center"> <img src='docs/frame_structure.png' align="center" height="200px"> </p>
 
 * The placement of transmitters and received were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/ug/tiduen5a/tiduen5a.pdf). Through TDM, the formed MIMO array is 2D with maximum horizontal aperture being 42.5λ and maximum vertical aperture being 3λ, where λ is the wavelength.  
     The 2D MIMO array is shown in the right figure below:
-<p align="center"> <img src='docs/mimo.png' align="center" height="200px"> </p>
+<p align="center"> <img src='docs/mimo.png' align="center" height="150px"> </p>
 
 * All radar configurations are included in [config](config.py).
 
