@@ -1,6 +1,6 @@
 # Raw Radar ADC Dataset for Automotive Object Detection
 
-A dataset for the 2Tx-4Rx MMWave Radar with the raw ADC data being recorded. Three main objects - pedestrians, cyclists, cars - were collected to fit the automotive object detection scenario. 
+A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Three main objects - pedestrians, cyclists, cars - were collected to fit the automotive object detection scenario. 
 
 <p align="center"> <img src='docs/automotive_tease.png' align="center" height="300px"> </p>
 
@@ -36,9 +36,10 @@ Any questions or suggestions are welcome!
 Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu) 
 
 ## Introduction
-In this dataset, we provided the raw analog-to-digital-converter (ADC) data of a 77GHz mmwave radar for the automotive object detection scenario. The overall dataset contains approximately 19800 frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the TI AWR 1843 board, with 2 horizontal transmit antennas and 4 receive antennas. With time-division multiplexing on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
+In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a *77GHz mmwave* radar for the automotive object detection scenario. The overall dataset contains approximately **19800** frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has *4 dimension: samples (fast time), chirps (slow time), transmitters, receivers*. The experiment radar was assembled from the *TI AWR 1843* board, with 2 horizontal transmit antennas and 4 receive antennas. With *time-division multiplexing* on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
 
-The data collection was done on the campus, road, and parking lot during the daytime, with the focus of capturing the data for three main objects: pedestrians, cyclists, and cars. The collected objects can be either moving (mostly) or static. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described in README documentation.
+The data collection was done on the *campus, road, and parking lot* during the daytime, with the focus of capturing the data for *three main objects: pedestrians, cyclists, and cars*. The collected objects can be either *moving (mostly)* or *static*. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described in README documentation.
+
 ## Download
 
 Download dataset from the google drive link:
@@ -56,26 +57,26 @@ The dataset consists of multiple sequences, e.g., "2021_05_11_bk_cc000", "2021_0
 
 The overall dataset structure is presented as below.
 
-    Carry Object
-    ---2021_05_11_bk_cc000
+    Automotive
+    ---2019_04_09_bms1000
        ---images_0
        ---radar_raw_frame
        ---labels.txt
-    ---2021_05_11_bk_cc001
+    ---2019_04_09_cms1000
        ......
        
 The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and labels in **.txt* format. The detailed data format is explained below.
 
 ### Radar ADC Data
 
-*  For each radar frame, its raw data (*.mat) has *4 dimension: samples (256), chirps (61), receivers (16), transmitters (12)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
+*  For each radar frame, its raw data (*.mat) has *4 dimension: samples (128), chirps (255), receivers (4), transmitters (2)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
 
     The example frame structure is shown as below:
-<p align="center"> <img src='docs/cascaded_frame_structure.png' align="center" height="300px"> </p>
+<p align="center"> <img src='docs/frame_structure.png' align="center" height="300px"> </p>
 
 * The placement of transmitters and received were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/ug/tiduen5a/tiduen5a.pdf). Through TDM, the formed MIMO array is 2D with maximum horizontal aperture being 42.5λ and maximum vertical aperture being 3λ, where λ is the wavelength.  
     The 2D MIMO array is shown in the right figure below:
-<p align="center"> <img src='docs/antenna%20array.png' align="center" height="300px"> </p>
+<p align="center"> <img src='docs/mimo.png' align="center" height="200px"> </p>
 
 * All radar configurations are included in [config](config.py).
 
