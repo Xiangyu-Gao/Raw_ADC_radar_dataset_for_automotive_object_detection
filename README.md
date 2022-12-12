@@ -1,29 +1,31 @@
-# Raw Radar ADC Dataset for Carry Object Detection
+# Raw Radar ADC Dataset for Automotive Object Detection
 
-A dataset for the 2D-MIMO MMWave Radar with the raw ADC data being recorded. Three main objects carried by individual - phones, laptops, knives - were collected to fit the carry object detection scenario. 
+A dataset for the 2Tx-4Rx MMWave Radar with the raw ADC data being recorded. Three main objects - pedestrians, cyclists, cars - were collected to fit the automotive object detection scenario. 
 
-<p align="center"> <img src='docs/tease.png' align="center" height="300px"> </p>
+<p align="center"> <img src='docs/automotive_tease.png' align="center" height="300px"> </p>
 
 ## Citations
 
-> [**Learning to Detect Open Carry and Concealed Object With 77 GHz Radar**](https://ieeexplore.ieee.org/abstract/document/9765320),            
-> Xiangyu Gao, Hui Liu, Sumit Roy, Guanbin Xing, Ali Alansari, and Youchen Luo, <br/>
-> *arXiv technical report* ([arXiv 2111.00551](https://arxiv.org/abs/2111.00551.pdf))  
-    
-    @ARTICLE{9765320,  author={Gao, Xiangyu and Liu, Hui and Roy, Sumit and Xing, Guanbin and Alansari, 
-        Ali and Luo, Youchen},  journal={IEEE Journal of Selected Topics in Signal Processing},   
-        title={Learning to Detect Open Carry and Concealed Object With 77 GHz Radar},   
-        year={2022},  volume={16},  number={4},  pages={791-803},  doi={10.1109/JSTSP.2022.3171168}}
+> [**RAMP-CNN: A Novel Neural Network for Enhanced Automotive Radar Object Recognition**](https://arxiv.org/pdf/2011.08981.pdf),            
+> Xiangyu Gao, Guanbin Xing, Sumit Roy, and Hui Liu, <br/>
+> *arXiv technical report* ([arXiv 2011.08981](https://arxiv.org/abs/2011.08981))  
 
-> [**RAW ADC DATA OF 2D-MIMO MMWAVE RADAR FOR CARRY OBJECT DETECTION**](https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection),            
-> Xiangyu Gao, Sumit Roy, Hui Liu, Youchen Luo, Guanbin Xing, <br/>
+    @ARTICLE{9249018,  author={Gao, Xiangyu and Xing, Guanbin and Roy, Sumit and Liu, Hui},  
+        journal={IEEE Sensors Journal},   
+        title={RAMP-CNN: A Novel Neural Network for Enhanced Automotive Radar Object Recognition},   
+        year={2021},  volume={21},  number={4},  pages={5119-5132},  doi={10.1109/JSEN.2020.3036047}}
+
+> [**Raw ADC Data of 77GHz MMWave radar for Automotive Object Detection**](https://ieee-dataport.org/documents/raw-adc-data-77ghz-mmwave-radar-automotive-object-detection),            
+> Xiangyu Gao, Youchen Luo, Guanbin Xing, Sumit Roy, Hui Liu, <br/>
 > *IEEE Dataport*
 
-    @data{begn-ye78-22, doi = {10.21227/begn-ye78}, url = {https://dx.doi.org/10.21227/begn-ye78},
-        author = {Gao, Xiangyu and Roy, Sumit and Liu, Hui and Luo, Youchen and Xing, Guanbin},
+    @data{xm40-jx59-22, doi = {10.21227/xm40-jx59}, url = {https://dx.doi.org/10.21227/xm40-jx59},
+        author = {Gao, Xiangyu and Luo, Youchen and Xing, Guanbin and Roy, Sumit and Liu, Hui},
         publisher = {IEEE Dataport},
-        title = {Raw ADC Data of 2D-MIMO MMWave radar for Carry Object Detection},
+        title = {Raw ADC Data of 77GHz MMWave radar for Automotive Object Detection},
         year = {2022} }
+    
+    
 
 ## Update
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
@@ -34,19 +36,18 @@ Any questions or suggestions are welcome!
 Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu) 
 
 ## Introduction
-In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a 77GHz mmwave radar for the carry object detection scenario. The overall dataset contains approximately **3000 frames** of *radar data* as well as the synchronized *camera images* and *labels*. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the *TI cascaded-chip TIDEP-01012* board, with *12 transmit* antennas and *16 receive* antennas. , it can form a large *2D-MIMO virtual array with 192 elements*, resulting in fine azimuth resolution (1.35°) and additional elevation resolution (19°). Other parameter configurations of radar were described in detail below. 
+In this dataset, we provided the raw analog-to-digital-converter (ADC) data of a 77GHz mmwave radar for the automotive object detection scenario. The overall dataset contains approximately 19800 frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has 4 dimension: samples (fast time), chirps (slow time), transmitters, receivers. The experiment radar was assembled from the TI AWR 1843 board, with 2 horizontal transmit antennas and 4 receive antennas. With time-division multiplexing on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
 
-The data collection was done in the building lobby and laboratory room with the focus of capturing the data for *three main objects carried by individual: phones, laptops, knives (include metallic butter knives and cutting knives)*. Each object can either be **openly carried** or be **concealed**. A single data collection run consisted of a subject holding one of the three objects listed above, and walking at a normal pace on a random path for 10 seconds in front of the testbed. To add variability to the data, the walking pattern of subjects was always randomize and the location of where the objects were concealed or how the objects were openly carried was always changed. 
-
+The data collection was done on the campus, road, and parking lot during the daytime, with the focus of capturing the data for three main objects: pedestrians, cyclists, and cars. The collected objects can be either moving (mostly) or static. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described in README documentation.
 ## Download
 
 Download dataset from the google drive link:
 ```
-https://drive.google.com/file/d/1IcrY3Hm-o9fxUwlZ-j2rLgLuAn0XQSKl/view?usp=share_link
+https
 ``` 
 Or from IEEE Dataport:
 ```
-https://ieee-dataport.org/documents/raw-adc-data-2d-mimo-mmwave-radar-carry-object-detection
+https://ieee-dataport.org/documents/raw-adc-data-77ghz-mmwave-radar-automotive-object-detection
 ```
 
 ## Dataset Structure and Format
