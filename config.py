@@ -1,0 +1,76 @@
+radar_configs = {
+    "startFreqConst_GHz": 77.0,
+    "bandwidth_GHz": 2.5,
+    "chirpDuration_usec": 45.0,     # single chirp per antenna
+    "freqSlopeConst_MHz_usec": 78.986000061035156,  # slope: MHz/us
+    "numAdcSamples": 256,   # samples
+    "digOutSampleRate": 8000.0,     # sampling rate: Ksps
+    "numLoops": 61,     # chirp loops
+    "framePeriodicity_msec": 33.33333,  # frame rate 30 fps
+}
+
+class_ids = {
+    'laptop': 5,
+    'phone': 1,
+    'knife': 2,
+    'butter_knife': 2,
+    'key': 4,
+    'phone+key': 14,
+    'phone+laptop': 15,
+    'phone+knife': 12,
+    'phone+butter_knife': 12,
+    'phone+phone': 11,
+    'key+key': 44,
+    'key+laptop': 45,
+    'key+knife': 42,
+    'key+butter_knife': 42,
+    'key+phone': 41,
+    'butter_knife+key': 24,
+    'butter_knife+laptop': 25,
+    'butter_knife+knife': 22,
+    'butter_knife+butter_knife': 22,
+    'butter_knife+phone': 21,
+    'knife+key': 24,
+    'knife+laptop': 25,
+    'knife+knife': 22,
+    'knife+butter_knife': 22,
+    'knife+phone': 21,
+    'laptop+key': 54,
+    'laptop+laptop': 55,
+    'laptop+knife': 52,
+    'laptop+butter_knife': 52,
+    'laptop+phone': 51,
+}
+
+labels_map = {
+    'ph': 'phone',
+    'lp': 'laptop',
+    'kf': 'knife',
+    'bk': 'butter_knife',
+    'ke': 'key',
+    'phke': 'phone+key',
+    'phlp': 'phone+laptop',
+    'phkf': 'phone+knife',
+    'phbk': 'phone+butter_knife',
+    'phph': 'phone+phone',
+    'keke': 'key+key',
+    'kelp': 'key+laptop',
+    'kekf': 'key+knife',
+    'kebk': 'key+butter_knife',
+    'keph': 'key+phone',
+    'bkke': 'butter_knife+key',
+    'bklp': 'butter_knife+laptop',
+    'bkkf': 'butter_knife+knife',
+    'bkbk': 'butter_knife+butter_knife',
+    'bkph': 'butter_knife+phone',
+    'kfke': 'knife+key',
+    'kflp': 'knife+laptop',
+    'kfbk': 'knife+butter_knife',
+    'kfkf': 'knife+knife',
+    'kfph': 'knife+phone',
+    'lpke': 'laptop+key',
+    'lplp': 'laptop+laptop',
+    'lpbk': 'laptop+butter_knife',
+    'lpkf': 'laptop+knife',
+    'lpph': 'laptop+phone',
+}
