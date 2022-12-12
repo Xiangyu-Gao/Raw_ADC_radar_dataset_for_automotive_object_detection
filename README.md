@@ -53,7 +53,7 @@ https://ieee-dataport.org/documents/raw-adc-data-77ghz-mmwave-radar-automotive-o
 
 ## Dataset Structure and Format
 
-The dataset consists of multiple sequences, e.g., "2021_05_11_bk_cc000", "2021_05_11_bk_cc001". Under each sequence folder, there exists the image folder *"images_0"*, and radar data folder *"radar_raw_frame"*, and label file *"labels.txt"*.
+The dataset consists of multiple sequences, e.g., "2019_04_09_bms1000", "2019_04_09_cms1000". Under each sequence folder, there exists the image folder *"images_0"*, and radar data folder *"radar_raw_frame"*, and label file *"labels.txt"*.
 
 The overall dataset structure is presented as below.
 
