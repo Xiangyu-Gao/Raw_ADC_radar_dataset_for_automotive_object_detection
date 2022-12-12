@@ -74,9 +74,8 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
     The example frame structure is shown as below:
 <p align="center"> <img src='docs/frame_structure.png' align="center" height="200px"> </p>
 
-* The placement of transmitters and received were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/ug/tiduen5a/tiduen5a.pdf). Through TDM, the formed MIMO array is 2D with maximum horizontal aperture being 42.5λ and maximum vertical aperture being 3λ, where λ is the wavelength.  
-    The 2D MIMO array is shown in the right figure below:
-<p align="center"> <img src='docs/mimo.png' align="center" height="150px"> </p>
+* The placement of 2 transmitters and 4 receivers were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/an/swra554a/swra554a.pdf). Through TDM, the it forms a 1 by 8 MIMO array as shown in the right figure below:
+<p align="center"> <img src='docs/mimo.png' align="center" height="180px"> </p>
 
 * All radar configurations are included in [config](config.py).
 
@@ -107,7 +106,7 @@ Under prepare...
 This tool is release under MIT license (see [LICENSE](LICENSE)).
 
 ## Acknowledgement
-This project was supported by the [FUNLAB](https://depts.washington.edu/funlab/), [University of Washington](http://www.washington.edu/). This project is not possible without multiple great opensourced codebases. We list some notable examples below.
+This project was supported by the [FUNLAB](https://depts.washington.edu/funlab/), [University of Washington](http://www.washington.edu/), and [Silkwave Holdings](https://silkwave.com.hk/). This project is not possible without multiple great opensourced codebases. We list some notable examples below.
 
 * [microDoppler](https://github.com/Xiangyu-Gao/mmWave-radar-signal-processing-and-microDoppler-classification)
 * [ramp-cnn](https://github.com/Xiangyu-Gao/Radar-multiple-perspective-object-detection)
