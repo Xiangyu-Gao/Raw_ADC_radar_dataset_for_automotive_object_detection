@@ -38,7 +38,7 @@ Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu)
 ## Introduction
 In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a *77GHz mmwave* radar for the automotive object detection scenario. The overall dataset contains approximately **19800** frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has *4 dimension: samples (fast time), chirps (slow time), transmitters, receivers*. The experiment radar was assembled from the *TI AWR 1843* board, with 2 horizontal transmit antennas and 4 receive antennas. With *time-division multiplexing* on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
 
-The data collection was done on the *campus, road, and parking lot* during the daytime, with the focus of capturing the data for *three main objects: pedestrians, cyclists, and cars*. The collected objects can be either *moving (mostly)* or *static*. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described in README documentation.
+The data collection was done on the *campus, road, and parking lot* during the daytime, with the focus of capturing the data for *three main objects: pedestrians, cyclists, and cars*. The collected objects can be either *moving (mostly)* or *static*. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described below.
 
 ## Download
 
@@ -53,7 +53,7 @@ https://ieee-dataport.org/documents/raw-adc-data-77ghz-mmwave-radar-automotive-o
 
 ## Dataset Structure and Format
 
-The dataset consists of multiple sequences, e.g., "2019_04_09_bms1000", "2019_04_09_cms1000". Under each sequence folder, there exists the image folder *"images_0"*, and radar data folder *"radar_raw_frame"*, and label file *"labels.txt"*.
+The dataset consists of multiple sequences, e.g., "2019_04_09_bms1000", "2019_04_09_cms1000". Under each sequence folder, there exists the image folder *"images_0"*, and radar data folder *"radar_raw_frame"*, and label folder *"text_labels"*.
 
 The overall dataset structure is presented as below.
 
@@ -61,11 +61,11 @@ The overall dataset structure is presented as below.
     ---2019_04_09_bms1000
        ---images_0
        ---radar_raw_frame
-       ---labels.txt
+       ---text_labels
     ---2019_04_09_cms1000
        ......
        
-The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and labels in **.txt* format. The detailed data format is explained below.
+The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and "text_labels" contains label files for each frame in **.csv* format. The detailed data format is explained below.
 
 ### Radar ADC Data
 
@@ -85,13 +85,12 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 ### Labels
 
-*  Each row of "labels.txt" contains one label in format *[frame_id, uid, px, py, wid, len, class]*, where *frame_id* is the index of frame, *uid* is the unique tracking id of individual in this sequence, *px, py, wid, len* are the x center, y center, width, and length of the bounding box for individual/pedestrian; *class* is the class id of carried object, with the id number represents below.
-
-        'laptop': 5,
-        'phone': 1,
-        'knife': 2,
-        'butter_knife': 2,
-        'key': 4,
+*  Each *.csv file include the labels for a frame, with each row of it in format of *[uid, class, px, py, wid, len]*, where *uid* is the unique tracking id of objects in this sequence, *class* is the class id of objects, with the id number represents below, *px, py, wid, len* are the x center, y center, width, and length of the bounding box for objects.
+        
+        class ids
+        'pedestrian': 0,
+        'cyclist: 80,
+        'car': 2,
 
 ## Dataset Tools
 
