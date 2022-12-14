@@ -1,6 +1,6 @@
 # Raw Radar ADC Dataset for Automotive Object Detection
 
-A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Three main objects - pedestrians, cyclists, cars - were collected to fit the automotive object detection scenario. 
+A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Six main objects - pedestrian, cyclist, car, motorbike, bus, truck - were collected to fit the automotive object detection scenario. 
 
 <p align="center"> <img src='docs/automotive_tease.png' align="center" height="300px"> </p>
 
@@ -38,13 +38,13 @@ Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu)
 ## Introduction
 In this dataset, we provided the raw *analog-to-digital-converter* (ADC) data of a *77GHz mmwave* radar for the automotive object detection scenario. The overall dataset contains approximately **19800** frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has *4 dimension: samples (fast time), chirps (slow time), transmitters, receivers*. The experiment radar was assembled from the *TI AWR 1843* board, with 2 horizontal transmit antennas and 4 receive antennas. With *time-division multiplexing* on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
 
-The data collection was done on the *campus, road, and parking lot* during the daytime, with the focus of capturing the data for *three main objects: pedestrians, cyclists, and cars*. The collected objects can be either *moving (mostly)* or *static*. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described below.
+The data collection was done on the *campus, road, and parking lot* during the daytime, with the focus of capturing the data for *six main objects: pedestrian, cyclist, car, motorbike, bus, truck*. The collected objects can be either *moving (mostly)* or *static*. A single data collection run consisted of multiple objects listed above moving or being static at a normal speed for 30 seconds in front of the testbed. More information in terms of dataset structure, format, tools, and radar configuration was described below.
 
 ## Download
 
 Download dataset from the google drive link:
 ```
-https
+https://drive.google.com/file/d/1QgjwdQpY96NAVGdvjjFrXLhb48o15EO_/view?usp=share_link
 ``` 
 Or from IEEE Dataport:
 ```
@@ -87,10 +87,13 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 *  Each *.csv file include the labels for a frame, with each row of it in format of *[uid, class, px, py, wid, len]*, where *uid* is the unique tracking id of objects in this sequence, *class* is the class id of objects, with the id number represents below, *px, py, wid, len* are the x center, y center, width, and length of the bounding box for objects.
         
-        class ids
-        'pedestrian': 0,
-        'cyclist: 80,
-        'car': 2,
+        label_map = {0: 'person',
+                     2: 'car',
+                     3: 'motorbike',
+                     5: 'bus',
+                     7: 'truck',
+                     80: 'cyclist',
+                     }
 
 ## Dataset Tools
 
