@@ -103,7 +103,7 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
                      80: 'cyclist',
                      }
 
-Note that There might be a few special cases where the px py values exceed the provided limit and you may just wanna ignore them or do the clipping.
+Note that There might be a few special cases where the px, py values exceed the provided limit and you may just wanna ignore them or do the clipping.
 ## Dataset Tools
 
 ### Software Requirement and Installation
