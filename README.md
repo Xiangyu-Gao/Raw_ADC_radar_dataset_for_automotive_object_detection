@@ -85,8 +85,16 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 ### Labels
 
-*  Each *.csv file include the labels for a frame, with each row of it in format of *[uid, class, px, py, wid, len]*, where *uid* is the unique tracking id of objects in this sequence, *class* is the class id of objects, with the id number represents below, *px, py, wid, len* are the x center, y center, width, and length of the bounding box for objects.
+*  Each *.csv file include the labels for a frame, with **each row of it in format of *[uid, class, px, py, wid, len]***, they are,  
         
+        uid: the unique tracking id of objects in this sequence
+        class: the class id of objects, with the id number represented in label map, 
+        px: x-axis center of bounding box in meters within the range of [-20m, 20m]
+        py: y-axis center of bounding box in meters within the range of [1m, 24m]
+        wid: width of bounding box in meters (corresponding to x-axis)
+        len: lengt of bounding box in meters (corresponding to y-axis)
+        
+        The mapping of class id to objects is:
         label_map = {0: 'person',
                      2: 'car',
                      3: 'motorbike',
@@ -95,6 +103,7 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
                      80: 'cyclist',
                      }
 
+Note that There might be a few special cases where the px py values exceed the provided limit and you may just wanna ignore them or do the clipping.
 ## Dataset Tools
 
 ### Software Requirement and Installation
