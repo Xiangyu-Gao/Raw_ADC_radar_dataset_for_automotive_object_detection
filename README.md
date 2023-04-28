@@ -29,7 +29,7 @@ A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Six
 
 ## Update
 
-***(April. 28, 2023) Update the description for labels.***
+***(April 28, 2023) Update the description for labels.***
 
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
 
