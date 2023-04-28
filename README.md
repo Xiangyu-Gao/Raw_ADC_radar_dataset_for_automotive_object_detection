@@ -69,9 +69,11 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 ### Radar ADC Data
 
-*  For each radar frame, its raw data (*.mat) has *4 dimension: samples (128), chirps (255), receivers (4), transmitters (2)*. All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one.
+*  For each radar frame, its raw data (*.mat) has *4 dimension*: 
+        
+        samples (128), chirps (255), receivers (4), transmitters (2). 
 
-    The example frame structure is shown as below:
+    All transmitters were arranged with *time-division multiplexing* (TDM), i.e., send chirp signal one by one. The example frame structure is shown as below:
 <p align="center"> <img src='docs/frame_structure.png' align="center" height="200px"> </p>
 
 * The placement of 2 transmitters and 4 receivers were plotted in the left figure below, from the [TI documentation](https://www.ti.com/lit/an/swra554a/swra554a.pdf). Through TDM, the it forms a 1 by 8 MIMO array as shown in the right figure below:
