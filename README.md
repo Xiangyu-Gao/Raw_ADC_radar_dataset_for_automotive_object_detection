@@ -68,7 +68,7 @@ The overall dataset structure is presented as below.
     ---2019_04_09_cms1000
        ......
        
-The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and "text_labels" contains label files for each frame in **.csv* format. The detailed data format is explained below.
+The "radar_raw_frame" folder contains **raw ADC radar data in _.mat_ format**, and "images_0" folder contains **camera images in _.jpg_ format**, and the "text_labels" contains **label files for each frame in _.csv_ format**. The detailed data format is explained below.
 
 **You should match the radar frame, camera image, and labels based on their filenames.** There is some redundant data and you can simply disregard it.
 
@@ -92,7 +92,7 @@ The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and 
 
 ### Labels
 
-*  Each *.csv file include the labels for a frame, with **each row of it in format of *[uid, class, px, py, wid, len]***, they are,  
+*  Each *.csv file include the labels for a frame, with **each row of it in format of _[uid, class, px, py, wid, len]_**, they are,  
         
         uid: the unique tracking id of objects in this sequence
         class: the class id of objects, with the id number represented in label map, 
