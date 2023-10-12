@@ -70,6 +70,8 @@ The overall dataset structure is presented as below.
        
 The "radar_raw_frame" folder contains raw ADC radar data in **.mat* format, and "images_0" folder contains camera images in **.jpg* format, and "text_labels" contains label files for each frame in **.csv* format. The detailed data format is explained below.
 
+**You should match the radar frame, camera image, and labels based on their filenames.** There is some redundant data and you can simply disregard it.
+
 ### Radar ADC Data
 
 *  For each radar frame, its raw data (*.mat) has *4 dimension*: 
