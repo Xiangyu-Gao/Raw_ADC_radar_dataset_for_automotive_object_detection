@@ -33,11 +33,6 @@ A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Six
 
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
 
-## Contact
-Any questions or suggestions are welcome! 
-
-Xiangyu Gao [xygao@uw.edu](mailto:xygao@uw.edu) 
-
 ## Introduction
 In this dataset, we provided the raw **analog-to-digital-converter** (ADC) data of a **77GHz mmwave** radar for the automotive object detection scenario. The overall dataset contains approximately **19800** frames of radar data as well as synchronized camera images and labels. For each radar frame, its raw data has **_4 dimensions: samples (fast time), chirps (slow time), transmitters, and receivers_**. The experiment radar was assembled from the **TI AWR 1843** board, with 2 horizontal transmit antennas and 4 receive antennas. With **time-division multiplexing** on all transmitters, it can form a 1D-MIMO virtual array with 8 elements. 
 
