@@ -29,6 +29,8 @@ A dataset for the 2TX-4RX MMWave Radar with the raw ADC data being recorded. Six
 
 ## Update
 
+***(May 26, 2025) The google drive download link is fixed.***
+
 ***(April 28, 2023) Update the description for labels.***
 
 ***(Dec. 11, 2022) Initial release of dataset and tools.***
@@ -42,7 +44,7 @@ The data collection was done on the **campus, road, and parking lot** during the
 
 Download the dataset from the google drive link:
 ```
-https://drive.google.com/file/d/1QgjwdQpY96NAVGdvjjFrXLhb48o15EO_/view?usp=share_link
+https://drive.google.com/file/d/1OfqXXgoFg6xRYZkRqPJye4cQ29Fomh3l/view?usp=sharing
 ``` 
 Or from IEEE Dataport:
 ```
